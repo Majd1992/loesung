@@ -1,5 +1,5 @@
 package org.hbrs.se.ws20.uebung1.control;
-
+import java.lang.ArrayIndexOutOfBoundsException;
 public class GermanTranslator implements Translator {
 
 	public String date = "Okt/2020"; // Default-Wert
@@ -7,9 +7,15 @@ public class GermanTranslator implements Translator {
 	/**
 	 * Methode zur Übersetzung einer Zahl in eine String-Repraesentation
 	 */
-	public String translateNumber( int number ) { 
-		// [ihr Source Code aus Übung 1-2] 
-		return null;
+	public String translateNumber( int number ) {
+		try {
+			String[] erg = {"eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn"};
+			return erg[number - 1];
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+		return "Übersetzung der Zahl ("+number+") nicht moeglich("+ version+")";
+
+		}
 	}
 		
 	/**

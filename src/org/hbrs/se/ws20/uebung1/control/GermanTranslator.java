@@ -1,6 +1,7 @@
 package org.hbrs.se.ws20.uebung1.control;
 import java.lang.ArrayIndexOutOfBoundsException;
 import java.util.Calendar;
+import java.util.Date;
 
 public class GermanTranslator implements Translator {
 
@@ -29,6 +30,9 @@ public class GermanTranslator implements Translator {
 	 * Objektmethode der Klasse GermanTranslator zur Ausgabe einer Info.
 	 */
 	public void printInfo() {
+		Date datum = new Date();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(datum);
 		System.out.println( "GermanTranslator v1.9, erzeugt am " + this.date );
 	}
 
@@ -37,8 +41,7 @@ public class GermanTranslator implements Translator {
 	 * Das Datum sollte system-intern gesetzt werden und nicht von externen View-Klassen
 	 */
 	public void setDate( String date ) {
-		Calendar calendar = Calendar.getInstance();
-
+		this.date = date;
 	}
 
 }

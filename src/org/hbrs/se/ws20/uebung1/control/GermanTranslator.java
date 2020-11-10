@@ -8,14 +8,19 @@ public class GermanTranslator implements Translator {
 	 * Methode zur Übersetzung einer Zahl in eine String-Repraesentation
 	 */
 	public String translateNumber( int number ) {
+		String[] zahlen = {"eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn"};
+		String erg ="";
 		try {
-			String[] erg = {"eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn"};
-			return erg[number - 1];
+
+			 erg = zahlen[number - 1];
 		}
 		catch(ArrayIndexOutOfBoundsException e) {
-		return "Übersetzung der Zahl ("+number+") nicht moeglich("+ version+")";
+		return "Übersetzung der Zahl ("+number+") nicht moeglich("+ Translator.version+")";
 
 		}
+
+			return erg;
+
 	}
 		
 	/**

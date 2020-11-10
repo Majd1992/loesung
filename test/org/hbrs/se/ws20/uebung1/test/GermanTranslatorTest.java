@@ -15,7 +15,7 @@ class GermanTranslatorTest {
         trans = new GermanTranslator();
     }
     @Test
-    void translateNumber() {
+    void translateNumbertest() {
         assertEquals("acht", trans.translateNumber(8));
         assertEquals("fuenf", trans.translateNumber(5));
         assertEquals("Übersetzung der Zahl ("+-11+") nicht moeglich("+ trans.version+")",trans.translateNumber(-11));

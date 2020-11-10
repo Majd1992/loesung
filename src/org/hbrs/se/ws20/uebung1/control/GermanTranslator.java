@@ -1,5 +1,7 @@
 package org.hbrs.se.ws20.uebung1.control;
 import java.lang.ArrayIndexOutOfBoundsException;
+import java.util.Calendar;
+
 public class GermanTranslator implements Translator {
 
 	public String date = "Okt/2020"; // Default-Wert
@@ -11,16 +13,16 @@ public class GermanTranslator implements Translator {
 		String[] zahlen = {"eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn"};
 		String erg ="";
 		try {
-
 			 erg = zahlen[number - 1];
 		}
+
 		catch(ArrayIndexOutOfBoundsException e) {
 		return "Übersetzung der Zahl ("+number+") nicht moeglich("+ Translator.version+")";
 
 		}
-
+		finally {
 			return erg;
-
+		}
 	}
 		
 	/**
@@ -35,7 +37,8 @@ public class GermanTranslator implements Translator {
 	 * Das Datum sollte system-intern gesetzt werden und nicht von externen View-Klassen
 	 */
 	public void setDate( String date ) {
-		this.date = date;
+		Calendar calendar = Calendar.getInstance();
+
 	}
 
 }
